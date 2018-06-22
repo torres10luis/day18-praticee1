@@ -7,25 +7,27 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   // title = 'app';
-  bools = false;
-  nums: [1, 2.5, 5];
-  strs: ['hi', 'there'];
+  // bools = false;
 
-  test: object = [{
+  bools: boolean[] = [true, false ];
+  nums: number[] = [1, 2.5, 5];
+  strs: string[] = ['hi', 'there'];
+
+  test: object = {
     id: 1, name: 'test'
-  }];
+    };
 
-  user: object = [{
+  user: object = {
     id: 2, name: 'user'
-  }];
+  };
 
   objs: Array<Object> = [this.test, this.user];
 
   types: Array<any> = [this.bools, this.nums, this.strs, this.objs];
 
 
-  getTypeOf(types) {
-    return typeof types;
+  getTypeOf(x: any) {
+    return typeof x ;
   }
 
 }

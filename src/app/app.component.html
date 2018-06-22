@@ -1,9 +1,14 @@
-<h1> {{types}} </h1>
-  <ul *ngFor="let type of types">
-    <li  >
-    {{type }}
-    <p style="text-transform: capitalize" >
+<h1> Types </h1>
+  <ul>  <!-- let i = index only loops once through the cycle-->
+    <li *ngFor="let type of types; let i = index" >
+    <p style="text-transform: capitalize">  {{ getTypeOf(type[0]) }}
     </p>
+    <ul>
+      <li *ngFor=" let val of type" >
+          {{getTypeOf(val) === 'object' ? val.name + ' ' + val.id : val}}
+      </li>
+    </ul>
+
     </li>
   </ul>
 
