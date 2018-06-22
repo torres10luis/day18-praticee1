@@ -6,26 +6,28 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
-  bools: any[] = [true, false];
+  // title = 'app';
+  bools = false;
   nums: [1, 2.5, 5];
   strs: ['hi', 'there'];
 
-  test: [{
+  test: object = [{
     id: 1, name: 'test'
   }];
 
-  user: [{
+  user: object = [{
     id: 2, name: 'user'
   }];
 
-  objs: Array<object> = [this.test, this.user];
+  objs: Array<Object> = [this.test, this.user];
 
   types: Array<any> = [this.bools, this.nums, this.strs, this.objs];
+
 
   getTypeOf(types) {
     return typeof types;
   }
+
 }
 
 
